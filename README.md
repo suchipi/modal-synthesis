@@ -10,6 +10,8 @@ Eventually I want to make a tool to automate it. But I'm no DSP expert, so it wi
 
 If you know what you're doing, you can probably figure out how to make your own data, but in the meantime, you can use some samples I included.
 
+More info here: https://ccrma.stanford.edu/~bilbao/booktop/node14.html
+
 ## Usage
 
 ```js
