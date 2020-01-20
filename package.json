@@ -1,22 +1,17 @@
 {
-  "name": "modal-synthesis-example",
+  "name": "modal-synthesis",
   "private": true,
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "src/index.ts",
   "license": "MIT",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.0",
-    "typescript": "^3.7.5",
-    "@types/lodash.throttle": "^4.1.6"
+    "typescript": "^3.7.5"
   },
   "scripts": {
-    "start": "yarn dev",
-    "dev": "parcel src/index.html",
-    "build": "rimraf dist && parcel build src/index.html"
+    "build": "rimraf dist && tsc"
   },
-  "dependencies": {
-    "lodash.throttle": "^4.1.1"
-  }
+  "dependencies": {}
 }

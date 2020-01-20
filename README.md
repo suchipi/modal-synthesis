@@ -1,15 +1,35 @@
-# modal-synthesis-example
+# modal-synthesis
 
-This code uses the Web Audio API to create a synthesizer for a modal sound. It's set to the values from a recording of me hitting a glass on my desk with my apple pencil, but it has controls to adjust the values using global multipliers. The code is also written in such a way that the values themselves are separated from everything else, so you could replace them with different values (from your own recording of a modal sound), if you like.
+This packages uses the Web Audio API to create a synthesizer for a modal sound.
+
+You can use it to synthesize your own modal sounds, but I don't have documentation for how to do that yet, sorry :(
+
+It involves looking at a spectrogram and identifiying the most important features of the sound.
+
+Eventually I want to make a tool to automate it. But I'm no DSP expert, so it will take me a while.
+
+If you know what you're doing, you can probably figure out how to make your own data, but in the meantime, you can use some samples I included.
 
 ## Usage
 
-```
-yarn install
-yarn start
-```
+```js
+const { makeModalSynthesis } = require("modal-synthesis");
+const { glassHit } = require("modal-synthesis/samples");
 
-Then open <http://localhost:1234/> in a web browser.
+const audioContext = new AudioContext();
+
+const glass = makeModalSynthesis(glassHit, audioContext).makeModel({
+  // You can use Math.random in here to vary the sound a bit
+  amplitudeMultiplier: () => 1,
+  frequencyMultiplier: () => 1,
+  decayMultiplier: () => 1,
+});
+
+glass.outputNode.connect(audioContext.destination);
+
+// Hit the glass
+glass.excite();
+```
 
 ## License
 
