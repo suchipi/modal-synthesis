@@ -1,4 +1,4 @@
-var glassHit: Array<[number, number, number]> = [
+const glassHit: Array<[number, number, number]> = [
   // Me hitting a glass on my desk with my apple pencil
   [5434.442139, 0.851535, 0.286],
   [5141.052246, 0.496733, 0.346],
@@ -19,7 +19,7 @@ var glassHit: Array<[number, number, number]> = [
   [5735.906982, 0.011548, 0.182],
 ];
 
-var forkDrop: Array<[number, number, number]> = [
+const forkDrop: Array<[number, number, number]> = [
   // Me dropping a fork on my coffee table. This one didn't turn out so great,
   // but it's a pretty good starting point for small metallic objects.
   [6852.941895, 1.0, 0.335],
@@ -54,7 +54,7 @@ function intoDataFormat(data: Array<[number, number, number]>) {
   });
 }
 
-module.exports = {
+export default {
   glassHit: intoDataFormat(glassHit),
   forkDrop: intoDataFormat(forkDrop),
 };
