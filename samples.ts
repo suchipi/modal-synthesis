@@ -1,4 +1,4 @@
-var glassHit = [
+var glassHit: Array<[number, number, number]> = [
   // Me hitting a glass on my desk with my apple pencil
   [5434.442139, 0.851535, 0.286],
   [5141.052246, 0.496733, 0.346],
@@ -19,7 +19,7 @@ var glassHit = [
   [5735.906982, 0.011548, 0.182],
 ];
 
-var forkDrop = [
+var forkDrop: Array<[number, number, number]> = [
   // Me dropping a fork on my coffee table. This one didn't turn out so great,
   // but it's a pretty good starting point for small metallic objects.
   [6852.941895, 1.0, 0.335],
@@ -44,7 +44,7 @@ var forkDrop = [
   [8677.880859, 0.162664, 0.293],
 ];
 
-function intoDataFormat(data) {
+function intoDataFormat(data: Array<[number, number, number]>) {
   return data.map(function(datum) {
     return {
       frequency: datum[0],
